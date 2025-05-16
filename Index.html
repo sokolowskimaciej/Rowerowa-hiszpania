@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Spain Biking</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fefefe;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #ffcc00;
+            text-align: center;
+            padding: 1em;
+        }
+        header img {
+            width: 120px;
+        }
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        nav a, nav button {
+            margin: 0 5px;
+            padding: 8px 12px;
+            background: #0077cc;
+            color: white;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 2em;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 1em;
+            background: #0077cc;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Spain Biking Logo">
+        <h1>Spain Biking</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Start</a>
+        <a href="booking.html">Rezerwacja</a>
+        <button onclick="setLanguage('pl')">PL</button>
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('es')">ES</button>
+    </nav>
+
+    <div class="container">
+        <h2 id="welcome-title">Witamy w wypożyczalni rowerów w Hiszpanii!</h2>
+        <p id="welcome-text">Oferujemy rowery klasyczne i elektryczne w słonecznej Hiszpanii – idealne na wycieczki wzdłuż wybrzeża, przez góry i doliny!</p>
+        <img src="logo.png" alt="Spain Biking Illustration" style="width: 60%; margin-top: 20px;">
+    </div>
+
+    <footer>
+        &copy; 2025 Spain Biking
+    </footer>
+
+    <script>
+        const translations = {
+            pl: {
+                "welcome-title": "Witamy w wypożyczalni rowerów w Hiszpanii!",
+                "welcome-text": "Oferujemy rowery klasyczne i elektryczne w słonecznej Hiszpanii – idealne na wycieczki wzdłuż wybrzeża, przez góry i doliny!"
+            },
+            en: {
+                "welcome-title": "Welcome to our bike rental in Spain!",
+                "welcome-text": "We offer classic and electric bikes in sunny Spain – perfect for trips along the coast, through mountains and valleys!"
+            },
+            es: {
+                "welcome-title": "¡Bienvenidos a nuestro alquiler de bicicletas en España!",
+                "welcome-text": "Ofrecemos bicicletas clásicas y eléctricas en la soleada España, perfectas para paseos por la costa, montañas y valles."
+            }
+        };
+
+        function setLanguage(lang) {
+            for (const key in translations[lang]) {
+                document.getElementById(key).textContent = translations[lang][key];
+            }
+        }
+    </script>
+</body>
+</html>
