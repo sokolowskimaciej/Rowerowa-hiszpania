@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Spain Biking</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fefefe;
+      color: #333;
+    }
+
+    header {
+      background: #ffcc00;
+      text-align: center;
+      padding: 1em;
+    }
+
+    header img {
+      width: 120px;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav a, nav button {
+      margin: 5px;
+      padding: 8px 12px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2em;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 200px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #0077cc;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 40px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Spain Biking Logo">
+    <h1>Spain Biking</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Start</a>
+    <a href="booking.html">Rezerwacja</a>
+    <button onclick="setLanguage('pl')">PL</button>
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('es')">ES</button>
+  </nav>
+
+  <div class="container">
+    <h2 id="welcome-title">Witamy w wypożyczalni rowerów w Hiszpanii!</h2>
+    <p id="welcome-text">Oferujemy rowery klasyczne i elektryczne w słonecznej Hiszpanii – idealne na wycieczki wzdłuż wybrzeża, przez góry i doliny!</p>
+
+    <img src="logo.png" alt="Spain Biking Illustration" style="width: 60%; margin-top: 20px;">
+
+    <!-- 📸 GALERIA -->
+    <h2 id="gallery-title">Galeria</h2>
+    <div class="gallery">
+      <img src="bike1.jpg" alt="Rowery na plaży">
+      <img src="bike2.jpg" alt="Trasa przez góry">
+      <img src="bike3.jpg" alt="Widok z wycieczki">
+      <img src="bike4.jpg" alt="Rower elektryczny">
+    </div>
+
+    <!-- 📍 LOKALIZACJA -->
+    <h2 id="location-title">Nasza lokalizacja</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.187812648717!2d-3.7037906846080497!3d40.41677507936442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4229970b5f9cdb%3A0x7a86f6e3ff73615!2sMadrid!5e0!3m2!1spl!2ses!4v1623157730460!5m2!1spl!2ses" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+
+    <!-- 📞 KONTAKT -->
+    <h2 id="contact-title">Kontakt</h2>
+    <p id="contact-info">
+      E-mail: <a href="mailto:kontakt@spainbiking.com">kontakt@spainbiking.com</a><br>
+      Telefon: +34 600 123 456
+    </p>
+  </div>
+
+  <footer>
+    &copy; 2025 Spain Biking
+  </footer>
+
+  <script>
+    const translations = {
+      pl: {
+        "welcome-title": "Witamy w wypożyczalni rowerów w Hiszpanii!",
+        "welcome-text": "Oferujemy rowery klasyczne i elektryczne w słonecznej Hiszpanii – idealne na wycieczki wzdłuż wybrzeża, przez góry i doliny!",
+        "gallery-title": "Galeria",
+        "location-title": "Nasza lokalizacja",
+        "contact-title": "Kontakt",
+        "contact-info": "E-mail: kontakt@spainbiking.com\nTelefon: +34 600 123 456"
+      },
+      en: {
+        "welcome-title": "Welcome to our bike rental in Spain!",
+        "welcome-text": "We offer classic and electric bikes in sunny Spain – perfect for coastal, mountain and valley trips!",
+        "gallery-title": "Gallery",
+        "location-title": "Our Location",
+        "contact-title": "Contact",
+        "contact-info": "Email: contact@spainbiking.com\nPhone: +34 600 123 456"
+      },
+      es: {
+        "welcome-title": "¡Bienvenidos a nuestro alquiler de bicicletas en España!",
+        "welcome-text": "Ofrecemos bicicletas clásicas y eléctricas en la soleada España, perfectas para rutas por la costa, montañas y valles.",
+        "gallery-title": "Galería",
+        "location-title": "Nuestra ubicación",
+        "contact-title": "Contacto",
+        "contact-info": "Correo electrónico: contacto@spainbiking.com\nTeléfono: +34 600 123 456"
+      }
+    };
+
+    function setLanguage(lang) {
+      for (const key in translations[lang]) {
+        const el = document.getElementById(key);
+        if (el) el.textContent = translations[lang][key];
+      }
+    }
+  </script>
+</body>
+</html>
